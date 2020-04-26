@@ -1,0 +1,24 @@
+{% set title = "관리자 : 상세페이지" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{ product.name }}
+        </div>
+        <div class="panel-body">
+            <div style="padding-bottom: 10px">
+                작성일 : {{ product.dateFormat( product.createdAt ) }}
+            </div>
+
+            {{ product.description }}
+
+        </div>
+    </div>
+
+    <a href="/admin/products" class="btn btn-default">목록으로</a>
+    <a href="/admin/products/edit/{{ product.id }}" class="btn btn-primary">수정</a>
+
+
+
+{% endblock %}
